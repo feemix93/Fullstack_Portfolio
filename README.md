@@ -1,134 +1,110 @@
-# Build a Modern Portfolio Website with React & TailwindCSS
+# Faheem Ur Rehman | Portfolio
 
-<div align="center">
-  <br />
-  <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank">
-    <img src="./banner.png" alt="Portfolio Website Banner">
-  </a>
-  <br />
-  <div>
-    <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-    <img src="https://img.shields.io/badge/-TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
-    <img src="https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-    <img src="https://img.shields.io/badge/-Lucide Icons-FD4D4D?style=for-the-badge&logo=lucide" alt="Lucide Icons" />
-    <img src="https://img.shields.io/badge/-Radix UI-9D4EDD?style=for-the-badge&logo=data:image/svg+xml;base64..." alt="Radix UI" />
-  </div>
-  <h3 align="center">Create a Stunning Developer Portfolio with Animations, Dark Mode, and Projects Showcase</h3>
-  <div align="center">
-    Follow the full video tutorial on 
-    <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank"><b>YouTube</b></a>
-  </div>
-  <br />
-</div>
+Personal portfolio site for a full-stack developer, built with React and Vite. It showcases selected product work (CardClan, Blonk.co, GuestGuru.ai), work experience, and skills.
 
-## 📋 Table of Contents
+**Live site:** [your-site.vercel.app](https://your-site.vercel.app) <!-- replace after deploying -->
 
-1. [Introduction](#-introduction)
-2. [Tech Stack](#-tech-stack)
-3. [Features](#-features)
-4. [Quick Start](#-quick-start)
-5. [Screenshots](#-screenshots)
-6. [Deployment](#-deployment)
+## Tech stack
 
----
+- **React 18** for the UI
+- **Vite 5** for development and builds
+- **Plain CSS** with custom properties (no UI framework)
+- **Vercel** for hosting
 
-## 🚀 Introduction
+## Features
 
-In this tutorial, you'll learn how to build a modern portfolio website using **React**, **TailwindCSS**, **Vite**, and **Lucide Icons**. From dark mode support to responsive animations and deployable project showcases, this video walks you through every step—perfect for developers looking to level up their frontend skills or apply for jobs.
+- Single-page layout with sections for projects, experience, skills, and contact
+- Content-driven: all text lives in one data file, so updates need no component changes
+- Responsive design, from phones to desktops
+- Automatic light and dark mode based on the visitor's system setting
+- Safe-area support for notched phones
+- Accessible markup: semantic HTML, `rel="noopener noreferrer"` on external links
 
-🎥 Watch the full tutorial: [YouTube](https://youtu.be/YOUR_VIDEO_ID)
+## Project structure
 
----
+```
+portfolio-react/
+├── index.html          # HTML shell and meta tags
+├── package.json
+├── vite.config.js
+└── src/
+    ├── main.jsx        # App entry point
+    ├── App.jsx         # Components: Nav, Hero, Section, ProjectCard
+    ├── data.js         # All site content (profile, projects, experience, skills)
+    └── styles.css      # Styles and theme variables
+```
 
-## ⚙️ Tech Stack
+## Getting started
 
-* **React** – Component-based UI development
-* **Vite** – Lightning-fast build tool
-* **TailwindCSS** – Utility-first CSS for styling
-* **Lucide Icons** – Clean and beautiful icon pack
-* **Radix UI** – Accessible component primitives
-* **TypeScript (optional)** – Type safety and tooling
-* **GitHub & Vercel** – Deployment
-
----
-
-## ⚡️ Features
-
-* 🌑 **Light/Dark Mode Toggle**
-  Save theme preference in local storage with beautiful transitions
-
-* 💫 **Animated Backgrounds**
-  Stars, meteors, scroll effects, and glowing UI elements
-
-* 📱 **Responsive Navigation**
-  Desktop and mobile menus with glassmorphism
-
-* 👨‍💻 **Hero & About Sections**
-  Showcase who you are with smooth intro animations and buttons
-
-* 📊 **Skills Grid**
-  Filterable progress bars and categories with animated width
-
-* 🖼️ **Projects Showcase**
-  Display screenshots, tech stacks, and GitHub/demo links
-
-* 📩 **Contact Section**
-  Social icons + responsive contact form with toast notifications
-
-* 🚀 **One-Click Deployment**
-  Easily host your site with Vercel and GitHub
-
----
-
-## 👌 Quick Start
-
-### Prerequisites
-
-* [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
-
-### Clone and Run
+**Prerequisites:** Node.js 18 or newer.
 
 ```bash
-git clone https://github.com/yourusername/react-tailwind-portfolio.git
-cd react-tailwind-portfolio
+git clone git@github.com:feemix93/portfolio.git
+cd portfolio
 npm install
 npm run dev
 ```
 
-Your app will be available at: [http://localhost:5173](http://localhost:5173)
+The site runs at `http://localhost:5173`.
 
----
+### Scripts
 
-## 🖼️ Screenshots
+| Command           | Description                                  |
+| ----------------- | -------------------------------------------- |
+| `npm run dev`     | Start the development server with hot reload |
+| `npm run build`   | Create a production build in `dist/`         |
+| `npm run preview` | Preview the production build locally         |
 
-> 📸 Add screenshots of your Hero section, Projects grid, and Contact form here to show off your site.
+## Customizing the content
 
----
+Everything is in `src/data.js`:
 
-## ☁️ Deployment
+- `profile`: name, title, headline, intro, email, and social links
+- `projects`: each has `name`, `role`, `description` (array of paragraphs), `tags`, and `url`
+- `experience`: each has `role`, `when`, and `text`
+- `skills`: groups of skill names
 
-### Deploy on Vercel
+To add a project, add an object to the `projects` array:
 
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Click **Deploy**
+```js
+{
+  name: "Project name",
+  role: "Your role",
+  description: ["What it does and what you built."],
+  tags: ["React", "Node.js"],
+  url: "https://example.com",
+}
+```
 
-Your live website will be hosted on a custom subdomain (e.g. `https://your-name.vercel.app`)
+To change colors, edit the CSS variables at the top of `src/styles.css` (`--accent`, `--bg`, and so on). Dark-mode values are in the `prefers-color-scheme: dark` block.
 
----
+## Deployment
 
-## 🔗 Useful Links
+The site is deployed on Vercel.
 
-* [React Documentation](https://reactjs.org/)
-* [Tailwind CSS Docs](https://tailwindcss.com/)
-* [Lucide Icons](https://lucide.dev/)
-* [Radix UI](https://www.radix-ui.com/)
-* [Vite](https://vitejs.dev/)
-* [Vercel](https://vercel.com/)
+1. Push the repository to GitHub.
+2. In Vercel, choose **Add New → Project** and import the repository.
+3. Vercel detects Vite automatically (build command `npm run build`, output directory `dist`).
+4. Click **Deploy**.
 
----
+Every push to `main` triggers a new deployment.
 
-Let me know if you'd like me to generate a version with your actual GitHub repo, YouTube URL, or a banner image suggestion!
-# Fullstack_Portfolio
+## Design decisions
+
+- **Data separated from components:** content changes are one-file edits, which keeps the UI code small and easy to review.
+- **No UI library:** a portfolio this size does not need one. Plain CSS keeps the bundle small and loading fast.
+- **Vite over Create React App:** faster startup and builds, and CRA is no longer actively maintained.
+- **System fonts:** no external font requests, which keeps first load fast and avoids layout shift.
+
+## Possible improvements
+
+- Add side projects with live demos and GitHub links (for example, an audio transcription API and a tool-lending app with n8n automations)
+- Add a downloadable resume
+- Add a project detail view with architecture notes and screenshots
+- Add basic tests and a CI check for builds
+
+## Contact
+
+- Email: [faheemuurehman@gmail.com](mailto:faheemuurehman@gmail.com)
+- GitHub: [feemix93](https://github.com/feemix93)
+- LinkedIn: [Faheem Ur Rehman](https://www.linkedin.com/in/faheem-ur-rehman-765ba592/)
