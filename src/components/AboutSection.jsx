@@ -16,7 +16,7 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-            With over 5 years of experience in software development, 
+            With over 10 years of experience in software development, 
             I specialize in building robust, scalable, and high-performance web applications using modern technologies. 
             From crafting responsive user interfaces to developing efficient backend systems and API integrations, 
             I focus on delivering reliable solutions that create real business value.
